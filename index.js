@@ -8,6 +8,14 @@ let canvas = {
 
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
+      let ctx = canvas.context;
+ctx.fillStyle = playerColor;
+ctx.fillRect(x,y,width,height);
+x = 100;
+y = 100;
+width = 50;
+height = 50;
+
    },
    stop : function() {
        clearInterval(this.game);
@@ -27,13 +35,6 @@ function game() {
 function updateCoin() {
 }
 
-let ctx = canvas.context;
-ctx.fillStyle = playerColor;
-ctx.fillRect(x,y,width,height);
-x = 100;
-y = 100;
-width = 50;
-height = 50;
 
 
 
