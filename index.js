@@ -26,6 +26,8 @@ function game() {
 
 function updateCoin() {
 }
+
+
 window.addEventListener("keydown", function(event) {   switch(event.code) {
        case "KeyS":
        case "ArrowDown":
