@@ -1,3 +1,12 @@
+// drawing rectangle
+let ctx = canvas.context
+ctx.fillStyle = color; //color variable
+let x = 100
+let y = 100
+let width = 50
+let height = 50
+ctx.fillRect(x,y,width,height)
+
 window.addEventListener("keydown", function(event) {   switch(event.code) {
        case "KeyS":
        case "ArrowDown":
