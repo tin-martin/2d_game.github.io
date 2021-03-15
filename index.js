@@ -9,13 +9,13 @@ let canvas = {
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
-
-
    },
    stop : function() {
        clearInterval(this.game);
    }
 }
+
+canvas()
 
 const playerColor = "rgb(118,150,86)";
 const screenColor = "rgb(0,0,0)";
