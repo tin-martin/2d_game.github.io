@@ -14,6 +14,19 @@ let canvas = {
    }
 }
 
+const playerColor = "rgb(118,150,86)";
+const screenColor = "rgb(0,0,0)";
+const coinColor = "rgb(221,175,12)";
+const textColor = "rbg(255,255,255,0.5)";
+
+function game() {
+   canvas.coinInterval++;
+   let ctx = canvas.context;
+}
+
+function updateCoin() {
+}
+
 window.addEventListener("keydown", function(event) {   switch(event.code) {
        case "KeyS":
        case "ArrowDown":
