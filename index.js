@@ -5,7 +5,6 @@ let canvas = {
        this.canvas.height = 800;
        this.context = this.canvas.getContext("2d");
        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
@@ -14,8 +13,9 @@ let canvas = {
        clearInterval(this.game);
    }
 }
-
-canvas()
+var c = document.getElementById("canvas");
+var ctx = c.getContext("2d");
+ctx.fillRect(20, 20, 150, 100);
 
 const playerColor = "rgb(118,150,86)";
 const screenColor = "rgb(0,0,0)";
