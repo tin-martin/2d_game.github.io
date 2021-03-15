@@ -27,6 +27,18 @@ function game() {
 function updateCoin() {
 }
 
+let ctx = canvas.context
+ctx.fillStyle = playerColor
+ctx.fillRect(x,y,width,height)
+x = 100
+y = 100
+width = 50
+hegiht = 50
+
+
+
+
+
 
 window.addEventListener("keydown", function(event) {   switch(event.code) {
        case "KeyS":
