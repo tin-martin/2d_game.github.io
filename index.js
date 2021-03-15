@@ -30,3 +30,7 @@ window.addEventListener("keyup", function(event) {
        case "ArrowLeft":
        case "KeyD":
        case "ArrowRight":
+           //Movement logic horizontal stop
+           break;
+   }
+}, true);
