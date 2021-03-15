@@ -27,13 +27,13 @@ function game() {
 function updateCoin() {
 }
 
-let ctx = canvas.context
-ctx.fillStyle = playerColor
-ctx.fillRect(x,y,width,height)
-x = 100
-y = 100
-width = 50
-height = 50
+let ctx = canvas.context;
+ctx.fillStyle = playerColor;
+ctx.fillRect(x,y,width,height);
+x = 100;
+y = 100;
+width = 50;
+height = 50;
 
 
 
