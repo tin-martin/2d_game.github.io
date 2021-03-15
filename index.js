@@ -9,11 +9,7 @@ let canvas = {
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.rect(20, 20, 150, 100);
-ctx.stroke();
+
 
    },
    stop : function() {
