@@ -33,7 +33,7 @@ ctx.fillRect(x,y,width,height)
 x = 100
 y = 100
 width = 50
-hegiht = 50
+height = 50
 
 
 
