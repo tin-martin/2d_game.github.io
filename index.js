@@ -10,7 +10,7 @@ let canvas = {
       let ctx = canvas.context;
       ctx.beginPath();
       ctx.rect(188, 50, 200, 100);
-      ctx.fillStyle = 'yellow';
+      ctx.fillStyle = 'brown';
       ctx.fill();
       ctx.lineWidth = 7;
       ctx.strokeStyle = 'black';
