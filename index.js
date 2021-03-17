@@ -14,7 +14,7 @@ let canvas = {
          ctx.fillStyle = 'brown';
          ctx.fill();
       }
-      while (false) {
+      while (true) {
          setTimeout(drawPlayer(100,100,100,100), 100);
          setTimeout(ctx.clearRect(0,0,800,800), 100);
          setTimeout(drawPlayer(200,200,200,200), 100);
