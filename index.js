@@ -8,13 +8,20 @@ let canvas = {
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
+      ctx.beginPath();
+      ctx.rect(188, 50, 200, 100);
+      ctx.fillStyle = 'yellow';
+      ctx.fill();
+      ctx.lineWidth = 7;
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
    },
    stop : function() {
        clearInterval(this.game);
    }
 }
-var ctx = canvas.context;
-ctx.fillRect(20, 20, 150, 100);
+
+
 
 const playerColor = "rgb(118,150,86)";
 const screenColor = "rgb(0,0,0)";
