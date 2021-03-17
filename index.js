@@ -13,8 +13,7 @@ let canvas = {
        clearInterval(this.game);
    }
 }
-var c = canvas;
-var ctx = c.getContext("2d");
+var ctx = canvas;
 ctx.fillRect(20, 20, 150, 100);
 
 const playerColor = "rgb(118,150,86)";
