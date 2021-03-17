@@ -15,7 +15,7 @@ let canvas = {
          ctx.fill();
       }
       setTimeout(drawPlayer(100,100,100,100), 100);
-      setTimeout(ctx.clearRect(0,0,800,800), 100);
+      setTimeout(ctx.clearRect(0,0,800,800), 2000);
       setTimeout(drawPlayer(200,200,200,200), 100);
    },
    stop : function() {
