@@ -8,13 +8,13 @@ let canvas = {
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
-      ctx.beginPath();
-      ctx.rect(188, 50, 200, 100);
-      ctx.fillStyle = 'brown';
-      ctx.fill();
-      ctx.lineWidth = 7;
-      ctx.strokeStyle = 'black';
-      ctx.stroke();
+      function drawPlayer(x,y,width,height) { 
+         ctx.beginPath();
+         ctx.rect(x,y,width,height);
+         ctx.fillStyle = 'brown';
+         ctx.fill();
+      }
+      drawPlayer(100,100,100,100);
    },
    stop : function() {
        clearInterval(this.game);
