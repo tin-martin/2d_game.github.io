@@ -15,10 +15,10 @@ let canvas = {
          ctx.fill();
       }
       function main(){
-         drawPlayer(100,100,100,100);
-         setTimeout(ctx.clearRect(0,0,800,800), 2000);
+         //drawPlayer(100,100,100,100);
+         //setTimeout(ctx.clearRect(0,0,800,800), 2000);
          drawPlayer(200,200,200,200);
-         setTimeout(ctx.clearRect(0,0,800,800), 2000);
+         //setTimeout(ctx.clearRect(0,0,800,800), 2000);
       }
       interval = setInterval(main(), 100)
       return clearInterval(interval)
