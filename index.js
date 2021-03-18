@@ -21,6 +21,7 @@ let canvas = {
          setTimeout(ctx.clearRect(0,0,800,800), 2000);
       }
       interval = setInterval(main(), 100)
+      return clearInterval(interval)
    },
    stop : function() {
        clearInterval(this.game);
