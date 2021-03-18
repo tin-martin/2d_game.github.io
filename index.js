@@ -14,7 +14,7 @@ let canvas = {
    }
 }
 
-let ctx = canvas.context;
+var ctx = c.getContext("2d");
 
 function drawPlayer(x,y,width,height) { 
          ctx.beginPath();
