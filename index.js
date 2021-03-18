@@ -28,15 +28,10 @@ function game() {
    this.y = 100
    this.width = 150
    this.height = 150
+   vel = 10
    drawPlayer(this.x, this.y, this.width, this.height)
-}
-game()
-
-
-
-
-
-window.addEventListener("keydown", function(event) {   switch(event.code) {
+   
+   window.addEventListener("keydown", function(event) {   switch(event.code) {
        case "KeyS":
        case "ArrowDown":
            //Movement logic down
@@ -47,28 +42,36 @@ window.addEventListener("keydown", function(event) {   switch(event.code) {
            break;
        case "KeyA":
        case "ArrowLeft":
-           //Movement logic left
+           this.x -= vel
            break;
        case "KeyD":
        case "ArrowRight":
-           //Movement logic right
+           this.x += vel
            break;
-   }
-}, true);
+      }
+   }, true);
 
-window.addEventListener("keyup", function(event) {
-   switch(event.code) {
-       case "KeyS":
-       case "ArrowDown":
-       case "KeyW":
-       case "ArrowUp":
-           //Movement logic vertical stop
-           break;
-       case "KeyA":
-       case "ArrowLeft":
-       case "KeyD":
-       case "ArrowRight":
-           //Movement logic horizontal stop
-           break;
-   }
-}, true);
+   window.addEventListener("keyup", function(event) {
+      switch(event.code) {
+          case "KeyS":
+          case "ArrowDown":
+          case "KeyW":
+          case "ArrowUp":
+              //Movement logic vertical stop
+              break;
+          case "KeyA":
+          case "ArrowLeft":
+          case "KeyD":
+          case "ArrowRight":
+              //Movement logic horizontal stop
+              break;
+      }
+   }, true);
+}
+game()
+
+
+
+
+
+
