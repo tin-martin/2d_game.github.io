@@ -8,42 +8,29 @@ let canvas = {
        this.coinInterval = 0;
        this.game = setInterval(game, 20);
       let ctx = canvas.context;
-      function drawPlayer(x,y,width,height) { 
-         ctx.beginPath();
-         ctx.rect(x,y,width,height);
-         ctx.fillStyle = 'brown';
-         ctx.fill();
-      }
-      function main(){
-         //drawPlayer(100,100,100,100);
-         //setTimeout(ctx.clearRect(0,0,800,800), 2000);
-         drawPlayer(200,200,200,200);
-         //setTimeout(ctx.clearRect(0,0,800,800), 2000);
-      }
-      interval = setInterval(main(), 100)
-      return clearInterval(interval)
    },
    stop : function() {
        clearInterval(this.game);
    }
 }
 
+let ctx = canvas.context;
 
-
-const playerColor = "rgb(118,150,86)";
-const screenColor = "rgb(0,0,0)";
-const coinColor = "rgb(221,175,12)";
-const textColor = "rbg(255,255,255,0.5)";
+function drawPlayer(x,y,width,height) { 
+         ctx.beginPath();
+         ctx.rect(x,y,width,height);
+         ctx.fillStyle = 'brown';
+         ctx.fill();
+      }
 
 function game() {
-   canvas.coinInterval++;
-   let ctx = canvas.context;
+   this.x = 100
+   this.y = 100
+   this.width = 150
+   this.height = 150
+   drawPlayer(this.x, this.y, this.width, this.height)
 }
-
-function updateCoin() {
-}
-
-
+game()
 
 
 
