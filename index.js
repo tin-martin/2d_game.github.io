@@ -71,7 +71,6 @@ function game() {
 game()
 
 
-//waefjioweajfoiajwefjaowi
 
 
 
