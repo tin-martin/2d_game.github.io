@@ -1,74 +1,70 @@
-let canvas = {
-   canvas: document.createElement("canvas"),
-   start: function () {
-       this.canvas.width = 800;
-       this.canvas.height = 800;
-       this.context = this.canvas.getContext("2d");
-       document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-       this.coinInterval = 0;
-       this.game = setInterval(game, 20);
-      let ctx = canvas.context;
-   },
-   stop : function() {
-       clearInterval(this.game);
-   }
+
+//width = 800, height = 800
+let x = 10;
+let y = 750; 
+let x_vel = 5;
+let y_vel = 5;
+//default pos
+ArrowRight = false;
+ArrowLeft = false;
+Jump = false
+var t = 0;
+function Player(){
+    function drawPlayer(){
+        ctx = canvas.context;
+        window.addEventListener("keydown", function(event) { switch(event.code) {
+            case "ArrowLeft":
+                ArrowLeft = true;
+                break;
+            case "ArrowRight":
+                ArrowRight = true;
+            case "ArrowUp":
+                Jump = true;
+                console.log(Jump)
+                
+                
+                
+        }}, true);
+        window.addEventListener("keyup", function(event) {
+            switch(event.code) {
+                case "ArrowLeft":
+                    ArrowLeft = false;               
+                case "ArrowRight":
+                    ArrowRight = false;   
+                
+            }
+        }, true);
+
+        if (ArrowRight){
+            x += x_vel;
+        } else if (ArrowLeft){
+            x -= x_vel;
+        }
+        if (Jump){
+           y -= 10*(y_vel - 0.5*9.8);
+        }
+
+        
+      
+        ctx.clearRect(0,0,800,800);
+        //del clear after from this 
+        ctx.fillStyle = "red";
+        ctx.fillRect(x,y,50,50);
+        
+    }
+    drawPlayer();
 }
 
-let ctx = canvas.context;
+function game(){
+     Player();
+ 
+    
 
-function drawPlayer(x,y,width,height) { 
-         ctx.beginPath();
-         ctx.rect(x,y,width,height);
-         ctx.fillStyle = 'brown';
-         ctx.fill();
-      }
+ }
 
-function game() {
-   this.x = 100
-   this.y = 100
-   this.width = 150
-   this.height = 150
-   vel = 10
-   drawPlayer(this.x, this.y, this.width, this.height)
-   
-   window.addEventListener("keydown", function(event) {   switch(event.code) {
-       case "KeyS":
-       case "ArrowDown":
-           //Movement logic down
-           break;
-       case "KeyW":
-       case "ArrowUp":
-           //Movement logic up
-           break;
-       case "KeyA":
-       case "ArrowLeft":
-           this.x -= vel
-           break;
-       case "KeyD":
-       case "ArrowRight":
-           this.x += vel
-           break;
-      }
-   }, true);
 
-   window.addEventListener("keyup", function(event) {
-      switch(event.code) {
-          case "KeyS":
-          case "ArrowDown":
-          case "KeyW":
-          case "ArrowUp":
-              //Movement logic vertical stop
-              break;
-          case "KeyA":
-          case "ArrowLeft":
-          case "KeyD":
-          case "ArrowRight":
-              //Movement logic horizontal stop
-              break;
-      }
-   }, true);
-}
-game()
+
+
 
 
 
