@@ -18,9 +18,11 @@ function Player(){
                 break;
             case "ArrowRight":
                 ArrowRight = true;
+                break;
             case "ArrowUp":
                 Jump = true;
-                console.log(Jump)
+                break;
+        
                 
                 
                 
@@ -41,7 +43,7 @@ function Player(){
             x -= x_vel;
         }
         if (Jump){
-           y -= 10*(y_vel - 0.5*9.8);
+            t = 0;
         }
 
         
