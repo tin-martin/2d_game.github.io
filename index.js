@@ -22,6 +22,7 @@ function Player(){
                 break;
             case "ArrowUp": 
                 isJump = true;
+                onGround = false;
                
                 break;     
         }}, true);
@@ -46,9 +47,10 @@ function Player(){
 
         if (y === 680){
             isJump = false;
+            onGround = true;
           
         }
-        if (isJump && onGround){
+        if (isJump || !(onGround)){
             if(y_vel > -6.5){
                 y -= y_vel;
                 y_vel -= 0.25; 
