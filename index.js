@@ -1,16 +1,17 @@
-
 //width = 800, height = 800
 let x = 10;
 let y = 750; 
 let x_vel = 5;
-let y_vel = 5;
+let y_vel = 6.25;
 //default pos
-ArrowRight = false;
-ArrowLeft = false;
-Jump = false
-var t = 0;
+let ArrowRight = false;
+let ArrowLeft = false;
+let isJump = false;
+let onGround = true;
+
 function Player(){
-    function drawPlayer(){
+    function updatePlayer(){
+        console.log(y)
         ctx = canvas.context;
         window.addEventListener("keydown", function(event) { switch(event.code) {
             case "ArrowLeft":
@@ -19,21 +20,25 @@ function Player(){
             case "ArrowRight":
                 ArrowRight = true;
                 break;
-            case "ArrowUp":
-                Jump = true;
-                break;
-        
-                
-                
-                
+            case "ArrowUp": 
+                isJump = true;
+                if (y === 680){
+                    isJump = false;
+                    console.log(isJump)
+                }
+                break;     
         }}, true);
         window.addEventListener("keyup", function(event) {
             switch(event.code) {
                 case "ArrowLeft":
-                    ArrowLeft = false;               
+                    ArrowLeft = false;   
+                    break;            
                 case "ArrowRight":
-                    ArrowRight = false;   
-                
+                    ArrowRight = false;    
+                    break; 
+                case "ArrowUp":
+                    
+                    break;
             }
         }, true);
 
@@ -42,24 +47,46 @@ function Player(){
         } else if (ArrowLeft){
             x -= x_vel;
         }
-        if (Jump){
-            t = 0;
-        }
 
+        if (y === 50){
+            isJump = false;
+            console.log(isJump);
+        }
+        if (isJump && y_vel > -6.5){
+            y -= y_vel;
+            y_vel -= 0.25;    
+        }else if (isJump){ 
+            isJump = false;
+            y_vel = 6.25;  
+        }
         
-      
+    }
+    function drawPlayer(){
         ctx.clearRect(0,0,800,800);
         //del clear after from this 
         ctx.fillStyle = "red";
-        ctx.fillRect(x,y,50,50);
-        
+        ctx.fillRect(x,y,25,25);
     }
+    updatePlayer();
     drawPlayer();
 }
 
+function Platform(){
+    
+    function drawPlayer(){
+        //del clear after from this 
+        ctx.fillStyle = "black";
+        ctx.fillRect(0,700,800,25);
+        ctx.fillStyle = "red";
+        ctx.fillRect(0,700,800,2);
+
+   } 
+   drawPlayer();
+}
+
 function game(){
-     Player();
- 
+    Player();
+    Platform();
     
 
  }
