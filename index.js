@@ -1,3 +1,4 @@
+
 //width = 800, height = 800
 let x = 10;
 let y = 750; 
@@ -11,7 +12,6 @@ let onGround = true;
 
 function Player(){
     function updatePlayer(){
-        console.log(y)
         ctx = canvas.context;
         window.addEventListener("keydown", function(event) { switch(event.code) {
             case "ArrowLeft":
@@ -22,10 +22,7 @@ function Player(){
                 break;
             case "ArrowUp": 
                 isJump = true;
-                if (y === 680){
-                    isJump = false;
-                    console.log(isJump)
-                }
+               
                 break;     
         }}, true);
         window.addEventListener("keyup", function(event) {
@@ -37,7 +34,6 @@ function Player(){
                     ArrowRight = false;    
                     break; 
                 case "ArrowUp":
-                    
                     break;
             }
         }, true);
@@ -48,13 +44,15 @@ function Player(){
             x -= x_vel;
         }
 
-        if (y === 50){
+        if (y === 680){
             isJump = false;
-            console.log(isJump);
+          
         }
-        if (isJump && y_vel > -6.5){
-            y -= y_vel;
-            y_vel -= 0.25;    
+        if (isJump && onGround){
+            if(y_vel > -6.5){
+                y -= y_vel;
+                y_vel -= 0.25; 
+            }
         }else if (isJump){ 
             isJump = false;
             y_vel = 6.25;  
@@ -72,7 +70,6 @@ function Player(){
 }
 
 function Platform(){
-    
     function drawPlayer(){
         //del clear after from this 
         ctx.fillStyle = "black";
@@ -82,6 +79,10 @@ function Platform(){
 
    } 
    drawPlayer();
+}
+function startGame(){
+    Player();
+    Platform;
 }
 
 function game(){
