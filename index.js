@@ -21,9 +21,11 @@ function Player(){
                 ArrowRight = true;
                 break;
             case "ArrowUp": 
-                isJump = true;
-                onGround = false;
-               
+                if (!(isJump)){
+                    isJump = true;
+                    onGround = false;
+                }
+                
                 break;     
         }}, true);
         window.addEventListener("keyup", function(event) {
@@ -44,20 +46,22 @@ function Player(){
         } else if (ArrowLeft){
             x -= x_vel;
         }
-
-        if (y === 680){
-            isJump = false;
-            onGround = true;
-          
-        }
-        if (isJump || !(onGround)){
+        
+        //console.log(onGround, isJump)
+        if (isJump && !(onGround)){
             if(y_vel > -6.5){
                 y -= y_vel;
                 y_vel -= 0.25; 
             }
-        }else if (isJump){ 
+        }else if (isJump){                       
             isJump = false;
             y_vel = 6.25;  
+        }
+ 
+        if (y === 680 && isJump === true){
+            onGround = true;
+             isJump = false;
+             y_vel = 6.25;
         }
         
     }
@@ -72,7 +76,7 @@ function Player(){
 }
 
 function Platform(){
-    function drawPlayer(){
+    function drawPlatform(){
         //del clear after from this 
         ctx.fillStyle = "black";
         ctx.fillRect(0,700,800,25);
@@ -80,12 +84,13 @@ function Platform(){
         ctx.fillRect(0,700,800,2);
 
    } 
-   drawPlayer();
+   drawPlatform();
 }
-function startGame(){
-    Player();
-    Platform;
+
+function Map(){
+    
 }
+
 
 function game(){
     Player();
